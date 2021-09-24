@@ -13,6 +13,23 @@ end
 
 # O(n^2)
 
+# arr = [0, 1, 5, 7]
+# p bad_two_sum?(arr, 6) # => should be true
+# p bad_two_sum?(arr, 10) # => should be false
+
+
+def ok_two_sum?(arr, target_sum) #assume sorted arr
+  arr.each_with_index do |ele1, i| #O(n)
+    difference = target_sum - ele1 #O(1)
+    return true if arr.include?(difference) && i != arr.index(difference) #O(n) + O(n)
+  end
+  false 
+end 
+#O(3n) => O(n)
+
 arr = [0, 1, 5, 7]
-p bad_two_sum?(arr, 6) # => should be true
-p bad_two_sum?(arr, 10) # => should be false
+p ok_two_sum?(arr, 6) # => should be true
+p ok_two_sum?(arr, 10) # => should be false
+
+
+
