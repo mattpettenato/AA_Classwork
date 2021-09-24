@@ -32,4 +32,7 @@ p ok_two_sum?(arr, 6) # => should be true
 p ok_two_sum?(arr, 10) # => should be false
 
 
-
+# def best_two_sum(arr, target_sum)
+#   h = Hash.new(0)
+#   array.each.with_index 
+# end
