@@ -1,11 +1,12 @@
-# def anagram?(str1, str2)
-#     arr = str1.split("").permutation.to_a # O(n) * n! 
-#     new_arr = []
-#     arr.each do |word| #O(n)
-#         new_arr << word.join("") #O(n)
-#     end
-#     new_arr.include?(str2) # n!
-# end
+def anagram?(str1, str2)
+    arr = str1.split("").permutation.to_a # O(n) * n! 
+    new_arr = []
+    arr.each do |word| #O(n!)
+        new_arr << word.join("") #O(n)
+    end
+    new_arr.include?(str2) # n!
+end
+
 
 
 
@@ -27,5 +28,24 @@ end
 
 # O(n^2)
 
-p second_anagram?("gizmo", "sally")    #=> false
-p second_anagram?("elvis", "lives")    #=> true
+def third_anagram?(str1, str2)
+    sorted1 = str1.split("").sort #split: O(n) sort: n log n
+    sorted2 = str2.split("").sort # O(n)  + n log n
+    sorted1 == sorted2 # O(n)
+end 
+
+def fourth_anagram?(str1, str2)
+    h1 = Hash.new(0)
+    str1.each_char { |char| h1[char] += 1 } #O(n)
+    str2.each_char { |char| h1[char] -= 1 } #O(n)
+
+    h1.values.all? { |el| el == 0 } #O(1)
+end
+
+
+
+
+p fourth_anagram?("gizmo", "sally")    #=> false
+p fourth_anagram?("elvis", "lives")    #=> true
+
+
