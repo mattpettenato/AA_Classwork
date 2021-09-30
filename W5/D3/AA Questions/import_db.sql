@@ -66,11 +66,14 @@ INSERT INTO
   question_follows (user_id, question_id)
 VALUES
   ((SELECT id FROM users WHERE users.fname = 'Lebron' AND users.lname = 'James'),
-    (SELECT id FROM questions WHERE title = 'Lebron Question')),
+    (SELECT id FROM questions WHERE title = 'Lebron Question'));
+
+INSERT INTO
+  question_follows (user_id, question_id)
+VALUES
   ((SELECT id FROM users WHERE users.fname = 'Mark' AND users.lname = 'Twain'),
-    (SELECT id FROM questions WHERE title = 'Mark Question')),
-  ((SELECT id FROM users WHERE users.fname = 'Andy' AND users.lname = 'Huang'),
-    (SELECT id FROM questions WHERE title = 'Andy Question'));
+    (SELECT id FROM questions WHERE title = 'Lebron Question'));
+
 
 CREATE TABLE replies (
   id INTEGER PRIMARY KEY,
@@ -90,7 +93,11 @@ VALUES
   ((SELECT id FROM questions WHERE title = 'Lebron Question'),
     NULL,
     (SELECT id FROM users WHERE users.fname = 'Lebron' AND users.lname = 'James'),
-    'I am replying to your message'),
+    'I am replying to your message');
+
+INSERT INTO
+  replies (question_id, parent_reply_id, author_id, body)
+VALUES
   ((SELECT id FROM questions WHERE title = 'Mark Question'),
     (SELECT id FROM replies WHERE body = 'I am replying to your message'),
     (SELECT id FROM users WHERE users.fname = 'Mark' AND users.lname = 'Twain'),
