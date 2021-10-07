@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    #debugger
     user = User.new(user_params)
     if user.save
       render json: user
@@ -17,19 +18,15 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    #p @user
-    @user.update!(user_params)
-    render json: @user
+    user = User.find(params[:id])
+    user.update!(user_params)
+    render json: user
   end
 
   def destroy
     user = User.find(params[:id])
-    if user.destroy
-      render json: user
-    else
-      render json: 'Cannot destroy user'
-    end
+    user.destroy
+    render json: user
   end
 
   private
