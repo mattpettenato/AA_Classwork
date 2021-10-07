@@ -3,5 +3,11 @@ class Artwork < ApplicationRecord
 
   belongs_to :artist,
     foreign_key: :artist_id,
-    class: 'User'
+    class_name: 'User'
+
+  # belongs_to :artwork_share
+
+  # has_many :shared_viewers,
+  #     through: :artwork_share,
+  #     source: :viewers
 end
