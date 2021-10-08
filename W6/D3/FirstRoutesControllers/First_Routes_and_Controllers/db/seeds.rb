@@ -22,7 +22,7 @@ scream = Artwork.create!(title: 'The Scream', image_url: 'https://media.npr.org/
 
 ArtworkShare.destroy_all
 
-share1 = ArtworkShare.create!(artwork_id: monalisa.id, viewer_id: jim.id)
+# share1 = ArtworkShare.create!(artwork_id: monalisa.id, viewer_id: jim.id)
 
 
 
