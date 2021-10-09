@@ -1,0 +1,15 @@
+<form action ="<%= cats_url %>" method="POST" >
+    <label> username
+        <input type= "text" name ="user[username]" value = "<%= user.username %>" /> <!-- > user is from require in controller -->
+    </label>
+    <br>
+    <label> Email
+        <input type= "text" name ="user[email]" value = "<%= user.email %>" /> <!-- >  is from require in controller -->
+    </label>
+    <br>
+    <label> Age
+        <input type= "text" name ="[age]" value = "<%= user.age %>" /> <!-- > user is from require in controller -->
+    </label>
+    <br>
+    <input type = "submit" value = "Create User!"> <!-- > button that called the create post request -->
+</form>
