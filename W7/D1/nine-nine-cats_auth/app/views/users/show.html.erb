@@ -1,0 +1,17 @@
+<h1><%= @user.username %></h1>
+
+<table>
+  <tr>
+    <th>Attribute</th>
+    <th>Value</th>
+  </tr>
+  <% [:username].each do |attr_name| %>
+    <tr>
+      <td><%= attr_name %></td>
+      <td><%= @user.send(attr_name) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<a href="<%= new_user_url(@user) %>">Edit <%= @user.username %></a>
+

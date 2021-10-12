@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NinetyNineCats</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+  <header>
+
+  <h1> User </h1>
+
+    <% if current_user %>
+      <h2> Hello, <%= current_user.username %> </h2>
+    <% else  %>
+      <h2> TEST TEST TEST</h2>
+    <% end %>
+
+  </header>
+
+    <%= yield %>
+  </body>
+</html>
