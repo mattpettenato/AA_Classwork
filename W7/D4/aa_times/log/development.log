@@ -685,3 +685,34 @@ Completed 200 OK in 720ms (Views: 709.4ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-10-14 15:39:53 -0700
+Started GET "/assets/application.self-82f36b3898c8ac201698f0fe8ac01d1b931e5f5da2eb5fb733ada7daf951b337.css?body=1&livereload=1634254763725" for ::1 at 2021-10-14 16:39:23 -0700
+Started GET "/assets/application.self-82f36b3898c8ac201698f0fe8ac01d1b931e5f5da2eb5fb733ada7daf951b337.css?body=1&livereload=1634254763745" for ::1 at 2021-10-14 16:39:23 -0700
+Started GET "/" for ::1 at 2021-10-14 16:39:23 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (9.0ms)
+  Rendered shared/_masthead.html.erb (1.5ms)
+  Rendered shared/_sections_nav.html.erb (0.7ms)
+  Rendered shared/_search_modal.html.erb (0.9ms)
+  Rendered shared/_main_content.html.erb (5.1ms)
+  Rendered static_pages/index.html.erb within layouts/application (662.7ms)
+Completed 200 OK in 2223ms (Views: 2204.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c0735a76a06f8d91a5c2b19a3d0ef3d7f05cb43e256c1b674600e9750a7fa3d6.css?body=1" for ::1 at 2021-10-14 16:39:26 -0700
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-10-14 16:39:26 -0700
+Started GET "/" for ::1 at 2021-10-14 16:39:39 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.8ms)
+  Rendered shared/_masthead.html.erb (0.4ms)
+  Rendered shared/_sections_nav.html.erb (0.4ms)
+  Rendered shared/_search_modal.html.erb (0.7ms)
+  Rendered shared/_main_content.html.erb (0.8ms)
+  Rendered static_pages/index.html.erb within layouts/application (41.5ms)
+Completed 200 OK in 356ms (Views: 349.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-10-14 16:39:39 -0700
+Started GET "/assets/application.self-c0735a76a06f8d91a5c2b19a3d0ef3d7f05cb43e256c1b674600e9750a7fa3d6.css?body=1&livereload=1634254957975" for ::1 at 2021-10-14 16:42:37 -0700
+Started GET "/assets/application.self-c0735a76a06f8d91a5c2b19a3d0ef3d7f05cb43e256c1b674600e9750a7fa3d6.css?body=1&livereload=1634254957977" for ::1 at 2021-10-14 16:42:38 -0700
