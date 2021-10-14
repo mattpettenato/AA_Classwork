@@ -15,6 +15,8 @@ body {
 
 button {
 	background-color: $light-blue;
+	// border-width: 1px;
+	// border-style: solid;
 	border-color: $dark-blue;
 	color: white;
 	font-weight: bold;
@@ -28,8 +30,8 @@ button {
 }
 
 button:hover {
-	// background-color:
-	// border-color:
+	background-color: $dark-blue;
+	border-color: $darkest-blue;
 }
 
 /*
