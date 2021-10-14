@@ -4,6 +4,7 @@
 	align-items: center;
 	border-bottom: 2px solid black;
 	position: relative;
+	border-top: 1px solid $light-gray;
 }
 
 .language-nav {
@@ -15,6 +16,7 @@
 	border-bottom: none;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
+	
 
 	a {
 		margin: 0 5px;
@@ -23,6 +25,7 @@
 		font-size: 10px;
 		color: $dark-gray;
 	}
+
 
 	ul {
 		display: flex;
@@ -41,9 +44,14 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 
+
 	li {
 		margin-left: 10px;
 		border-right: 1px solid $light-gray;
+	}
+
+	li:last-child {
+		border-right: none;
 	}
 
 	button {
@@ -52,10 +60,11 @@
 		color: #000;
 		font-weight: normal;
 		border: none;
+		text-transform: none;
 	}
 
 	button:hover {
-		background-color: $lightest-gray;
+		background-color: $lightest-gray;		
 	}
 
 	a,
@@ -66,9 +75,13 @@
 
 	i {
 		margin-right: 5px;
+		
 	}
 
 	strong {
 		color: green;
 	}
 }
+	a:hover {
+		text-decoration: underline;
+	}
