@@ -1,14 +1,16 @@
 class User < ApplicationRecord
   #aaspire
   validates :username, :email, :session_token, presence: true, uniqueness: true
-  validates :password, length: { minumum: 6, allow_null: true} 
+  validates :password, length: { minimum: 6, allow_null: true} 
   validates :password_digest, presence: true
-
-
   
   has_many :subreddits,
-  foreign_id: :mod_id,
+  foreign_key: :mod_id,
   class_name: "Sub"
+
+  has_many :posts,
+  foreign_key: :author_id,
+  class_name: "Post"
   
   after_initialize :ensure_session_token
   

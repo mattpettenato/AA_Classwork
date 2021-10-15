@@ -3,7 +3,11 @@ class Sub < ApplicationRecord
   validates :subreddit, uniqueness: true
   validates :mod_id, uniqueness:{ scope: :subreddit} 
 
-  belong_to :mod,
-  foreign_id: :mod_id,
+  belongs_to :mod,
+  foreign_key: :mod_id,
   class_name: "User"
+
+  has_many :posts,
+  foreign_key: :subreddit_id,
+  class_name: "Post"
 end
