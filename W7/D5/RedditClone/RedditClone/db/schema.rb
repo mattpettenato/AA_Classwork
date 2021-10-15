@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_15_205604) do
+ActiveRecord::Schema.define(version: 2021_10_15_221026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "subs", force: :cascade do |t|
+    t.string "subreddit", null: false
+    t.text "description", null: false
+    t.integer "mod_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mod_id", "subreddit"], name: "index_subs_on_mod_id_and_subreddit", unique: true
+    t.index ["subreddit"], name: "index_subs_on_subreddit", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
