@@ -3,6 +3,12 @@ class User < ApplicationRecord
   validates :username, :email, :session_token, presence: true, uniqueness: true
   validates :password, length: { minumum: 6, allow_null: true} 
   validates :password_digest, presence: true
+
+
+  
+  has_many :subreddits,
+  foreign_id: :mod_id,
+  class_name: "Sub"
   
   after_initialize :ensure_session_token
   
