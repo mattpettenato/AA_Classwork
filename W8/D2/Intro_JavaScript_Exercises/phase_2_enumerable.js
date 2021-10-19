@@ -1,7 +1,15 @@
-function Array(arr) {
-  this.arr = arr;
+const test = [1, 2, 3, 4] // [1, 4, 9, 16]
+
+function myEach(el, cb) {
+  let arr = []
+  for (let i = 0; i < el.length; i++) {
+      arr.push(cb(el[i])); 
+  }
+  console.log(arr);
 }
 
-const test = new Array()
+function cb(el) {
+  return el * el;
+}
 
-function myEach
+myEach(test, cb);
