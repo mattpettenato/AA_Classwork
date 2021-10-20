@@ -85,11 +85,27 @@ Board.prototype.isOccupied = function (pos) {
  * Returns empty array if no pieces of the opposite color are found.
  */
 Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
-  
-  if (this.isOccupied(pos) || )
-  (this.isValidPos(pos))
-  this.isMine(pos)
+  if (!piecesToFlip) {
+    piecesToFlip = new Array;
+  }
+  let nextPos = [pos[0] + dir[0], pos[1] + dir[1]];
+  if (!this.isValidPos(nextPos)) {
+    return [];
+  } else if (!this.isOccupied(nextPos)) {
+    return [];
+  } else if (this.isMine(nextPos, color)) {
+    return piecesToFlip;
+  } else {
+    piecesToFlip.push(nextPos);
+    return this._positionsToFlip(nextPos, color, dir, piecesToFlip);
+  }
+  // if (this.isOccupied(pos) || )
+  // (this.isValidPos(pos))
+  // this.isMine(pos)
   // piecesToFlip = [] of pieces we want to flip
+  // checks to see if position is populated
+  // will keep going until it hits the same color
+  // 
   
 };
 
@@ -98,7 +114,25 @@ Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
  * taking the position will result in some pieces of the opposite
  * color being flipped.
  */
+/**
+should return false for an occupied position
+should return false for a move that does not capture
+should return true for a valid move
+ */
 Board.prototype.validMove = function (pos, color) {
+  if (this.isOccupied(pos)){
+    return false;
+  } 
+
+  for (let i = 0; i < Board.DIRS.length; i++) {
+    if (this._positionsToFlip(pos, color, Board.DIRS[i]).length !== 0) {
+      return true;
+    }
+  }
+  // iterate through all of Board.DIRS
+  // if _positionsToFlip always gets an empty array, return false
+  // if it does get a populated array. hit true.
+  return false;
 };
 
 /**
