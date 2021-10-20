@@ -9,7 +9,7 @@ if (typeof window === 'undefined'){
  * and two white pieces at [3, 3] and [4, 4]
  */
 function _makeGrid () {
-  let grid = new Array(8); // [[][][][][][][][]]
+  const grid = new Array(8); // [[][][][][][][][]]
   for (let i = 0; i < 8; i++){
     grid[i] = new Array(8);
   }
@@ -142,6 +142,25 @@ Board.prototype.validMove = function (pos, color) {
  * Throws an error if the position represents an invalid move.
  */
 Board.prototype.placePiece = function (pos, color) {
+// should allow a player to make a valid move
+if (!this.validMove(pos, color) || this.isOccupied(pos)){
+  throw new Error('Invalid move!');
+}
+
+let positions = [];
+for (let i = 0; i < Board.DIRS.length; i++) {
+  flipit = this._positionsToFlip(pos, color, Board.DIRS[i]);
+  positions = positions.concat(this._positionsToFlip(pos, color, Board.DIRS[i]));
+}
+positions.forEach(function(coord){
+  this.grid[coord[0]][coord[1]].color = color;
+})
+// grid[3][3] = grid[coord[0]][coord[1]]
+this.grid[pos[0], pos[1]] = new Piece(color)
+// should flip captured pieces
+// should not allow a piece on top of another piece
+// should not allow a move that doesn't capture
+// should not allow moves that isolate pieces
 };
 
 /**
