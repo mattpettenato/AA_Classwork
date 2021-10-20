@@ -24,7 +24,7 @@ Array.prototype.myMap = function(cb) {
   this.myEach(ele => arr.push(cb(ele)));
   return arr
 }
-console.log([1, 2, 3, 4].myMap(el => {return el * el});
+console.log([1, 2, 3, 4].myMap(el => {return (el * el)});
 
 
 
