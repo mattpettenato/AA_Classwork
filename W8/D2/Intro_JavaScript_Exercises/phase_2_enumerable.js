@@ -1,15 +1,44 @@
 const test = [1, 2, 3, 4] // [1, 4, 9, 16]
 
-function myEach(el, cb) {
-  let arr = []
-  for (let i = 0; i < el.length; i++) {
-      arr.push(cb(el[i])); 
+Array.prototype.myEach = function(cb) {
+  for (let i = 0; i < this.length; i++){
+    cb(this[i]);
   }
-  console.log(arr);
 }
+
+// function myEach(arr, cb) {
+//   for (let i = 0; i < arr.length; i++) {
+//       cb(arr[i]); 
+//   }
+// }
 
 function cb(el) {
   return el * el;
+  //console.log(el * el)
 }
 
-myEach(test, cb);
+console.log([1, 2, 3, 4].myEach(cb));
+
+Array.prototype.myMap = function(cb) {
+  let arr = [];
+  this.myEach(ele => arr.push(cb(ele)));
+  return arr
+}
+console.log([1, 2, 3, 4].myMap(el => {return el * el});
+
+
+
+
+// myEach(test, cb);
+
+// function myMap(arr, cb) {
+//   //const test = [1, 2, 3, 4];
+//   const answer = [];
+
+//   return function(cb){
+//     answer.push(myEach(arr, cb));
+//   }
+//   return answer;
+// }
+
+// console.log(myMap([1, 2, 3, 4]));
