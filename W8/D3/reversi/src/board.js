@@ -152,11 +152,16 @@ for (let i = 0; i < Board.DIRS.length; i++) {
   flipit = this._positionsToFlip(pos, color, Board.DIRS[i]);
   positions = positions.concat(this._positionsToFlip(pos, color, Board.DIRS[i]));
 }
-positions.forEach(function(coord){
-  this.grid[coord[0]][coord[1]].color = color;
-})
+// positions.forEach(function(coord){
+//   this.grid[coord[0]][coord[1]].color = color;
+// })
+
+for (let i = 0; i < positions.length; i++) {
+  this.grid[positions[i][0]][positions[i][1]].color = color;
+}
+
 // grid[3][3] = grid[coord[0]][coord[1]]
-this.grid[pos[0], pos[1]] = new Piece(color)
+this.grid[pos[0]][pos[1]] = new Piece(color)
 // should flip captured pieces
 // should not allow a piece on top of another piece
 // should not allow a move that doesn't capture
@@ -167,13 +172,28 @@ this.grid[pos[0], pos[1]] = new Piece(color)
  * Produces an array of all valid positions on
  * the Board for a given color.
  */
+// should return an empty array when there are no valid moves
+// should return an array of valid moves when some are left
 Board.prototype.validMoves = function (color) {
+  let validPos = new Array;
+  for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+      if (this.validMove([i, j], color)) {
+        validPos.push([i, j]);
+      }
+    }
+  }
+
+  return validPos;
 };
 
 /**
  * Checks if there are any valid moves for the given color.
  */
+// should return true when a color has one or more moves
+// should return false when a color has no more moves
 Board.prototype.hasMove = function (color) {
+  return this.validMoves(color).length !== 0;
 };
 
 
@@ -182,7 +202,10 @@ Board.prototype.hasMove = function (color) {
  * Checks if both the white player and
  * the black player are out of moves.
  */
+// should return false at the start
+// should return true when there are no more moves
 Board.prototype.isOver = function () {
+  return !this.hasMove('black') && !this.hasMove('white');
 };
 
 
