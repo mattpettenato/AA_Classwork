@@ -1,0 +1,44 @@
+ul {
+  /* display: flex;  */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  width: 300px;
+  height: 300px;
+  margin: 30px auto;
+}
+
+li {
+  float: right;
+  list-style: none;
+  width: 90px;
+  height: 90px;
+  border: 5px solid black;
+  background: gray;
+
+}
+
+li:hover {
+  background: yellowgreen;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center; 
+}
+/* 
+ul {
+  list-style: none;
+  margin: 30px auto;
+  width: 300px;
+  border: 5px solid black;
+}
+
+li {
+  float: left;
+  width: 90px;
+  height: 90px;
+  border: 5px solid black;
+  background: gray;
+  cursor: pointer;
+} */
