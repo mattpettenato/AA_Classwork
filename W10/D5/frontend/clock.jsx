@@ -23,12 +23,17 @@ componentWillUnmount(){
 
 render(){
     return(
-        <div>
-        <h1>Clock</h1>
-            time:
-            <ul>
-                { this.state.time.getHours() } : { this.state.time.getMinutes() } : { this.state.time.getSeconds() } 
-            </ul>
+        <div className="clock">
+        {/* <h1>Clock</h1> */}
+        <div className="time">
+            <p>
+                time { this.state.time.getHours() } : { this.state.time.getMinutes() } : { this.state.time.getSeconds() }
+            </p>
+        </div>
+            
+            <p>
+                date { this.state.time.toDateString() }
+            </p>
         </div>
     )
 }
