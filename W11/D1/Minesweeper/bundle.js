@@ -49,36 +49,31 @@ var Board = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(Board);
 
   function Board(props) {
+    var _this;
+
     _classCallCheck(this, Board);
 
-    return _super.call(this, props); // this.state =[]
+    _this = _super.call(this, props); // this.state =[]
+
+    _this.updateGame = _this.props.updateGame.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Board, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return this.props.board.grid.map(function (row, i) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
           className: "tile9"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: i
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: i
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: i
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: i
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: i
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: i
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: i
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: i
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: i
-        }))));
+        }, row.map(function (ele, j) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+            key: [i, j]
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            updateGame: _this2.updateGame
+          }));
+        })));
       });
     }
   }]);
@@ -154,7 +149,8 @@ var Game = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_board__WEBPACK_IMPORTED_MODULE_0__["default"], {
-        board: this.state.board
+        board: this.state.board,
+        updateGame: this.updateGame
       }));
     }
   }, {
@@ -30275,30 +30271,28 @@ if (false) {} else {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*******************************!*\
-  !*** ./react_minesweeper.jsx ***!
-  \*******************************/
+/*!*******************!*\
+  !*** ./index.jsx ***!
+  \*******************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/game */ "./components/game.jsx");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _components_tile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/tile */ "./components/tile.jsx");
-/* harmony import */ var _minesweeper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./minesweeper */ "./minesweeper.js");
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _components_game__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/game */ "./components/game.jsx");
+/* harmony import */ var _minesweeper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./minesweeper */ "./minesweeper.js");
 
 
 
 
 
 function Root() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "root"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_components_game__WEBPACK_IMPORTED_MODULE_0__["default"], null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_game__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   var main = document.getElementById("main");
-  react_dom__WEBPACK_IMPORTED_MODULE_2__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(Root, null), main);
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, null), main);
 });
 })();
 
