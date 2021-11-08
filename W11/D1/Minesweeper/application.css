@@ -1,0 +1,17 @@
+.tile9 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 600px;
+
+}
+
+li {
+  margin: 20px;
+}
+
+ul {
+  margin: 0px;
+  list-style-type: none;
+}
