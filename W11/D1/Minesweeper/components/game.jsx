@@ -1,35 +1,22 @@
-import Minesweeper from '../minesweeper';
-// import Boar
+import React from 'react';
+import ReactDOM from 'react-dom';
+import * as Minesweeper from '../minesweeper';
 
-class Game extends React.Component{
+
+export default class Game extends React.Component{
     constructor(props) {
       super(props);
-      this.minesweeper = new Minesweeper
-      this.state = { board: this.minesweeper.board(9, 30) }
+      this.board = new Minesweeper.Board(9, 30);
+      this.state = { board: this.board };
     }
 
     render() {
-      return(
-        <div>
-          <span>
-            for (let i = 0; i < ; i++) {
-              const element = arr];
-              
-            }
-            for (let index = 0; index < array.length; index++) {
-              const element = array[index];
-              
-            }
-          {this.state.board}
-          </span>
-          <span>
-            {this.updateGame}
-          </span>
-        </div>
-      );
-    }
 
-    updateGame() {
-
-    }
+      return this.board.grid.map((row, i) => {
+          row.map((col, j) => {
+          return ( <h1> hello </h1>
+            );
+        })
+      })
+  }
 }

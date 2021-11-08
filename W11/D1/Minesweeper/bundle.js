@@ -1,13 +1,79 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./components/game.jsx":
 /*!*****************************!*\
   !*** ./components/game.jsx ***!
   \*****************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/matthewpettenato/Documents/GitHub/AA_Classwork/W11/D1/Minesweeper/components/game.jsx: Unexpected token (15:52)\n\n\u001b[0m \u001b[90m 13 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33mspan\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m             \u001b[36mfor\u001b[39m (\u001b[36mlet\u001b[39m index \u001b[33m=\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m index \u001b[33m<\u001b[39m array\u001b[33m.\u001b[39mlength\u001b[33m;\u001b[39m index\u001b[33m++\u001b[39m) {\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m               \u001b[36mconst\u001b[39m element \u001b[33m=\u001b[39m array[index]\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 |\u001b[39m               \u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m             }\u001b[0m\n    at Object._raise (/Users/matthewpettenato/Documents/GitHub/AA_Classwork/W11/D1/Minesweeper/node_modules/@babel/parser/lib/index.js:541:17)\n    at Object.raiseWithData (/Users/matthewpettenato/Documents/GitHub/AA_Classwork/W11/D1/Minesweeper/node_modules/@babel/parser/lib/index.js:534:17)\n    at Object.raise (/Users/matthewpettenato/Documents/GitHub/AA_Classwork/W11/D1/Minesweeper/node_modules/@babel/parser/lib/index.js:495:17)\n    at Object.unexpected (/Users/matthewpettenato/Documents/GitHub/AA_Classwork/W11/D1/Minesweeper/node_modules/@babel/parser/lib/index.js:3560:16)\n    at Object.jsxParseIdentifier (/Users/matthewpettenato/Documents/GitHub/AA_Classwork/W11/D1/Minesweeper/node_modules/@babel/parser/lib/index.js:7236:12)\n    at Object.jsxParseNamespacedName (/Users/matthewpettenato/Documents/GitHub/AA_Classwork/W11/D1/Minesweeper/node_modules/@babel/parser/lib/index.js:7246:23)\n    at Object.jsxParseAttribute (/Users/matthewpettenato/Documents/GitHub/AA_Classwork/W11/D1/Minesweeper/node_modules/@babel/parser/lib/index.js:7331:22)\n    at Object.jsxParseOpeningElementAfterName (/Users/matthewpettenato/Documents/GitHub/AA_Classwork/W11/D1/Minesweeper/node_modules/@babel/parser/lib/index.js:7352:28)\n    at Object.jsxParseOpeningElementAt (/Users/matthewpettenato/Documents/GitHub/AA_Classwork/W11/D1/Minesweeper/node_modules/@babel/parser/lib/index.js:7345:17)\n    at Object.jsxParseElementAt (/Users/matthewpettenato/Documents/GitHub/AA_Classwork/W11/D1/Minesweeper/node_modules/@babel/parser/lib/index.js:7377:33)");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Game)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _minesweeper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../minesweeper */ "./minesweeper.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+var Game = /*#__PURE__*/function (_React$Component) {
+  _inherits(Game, _React$Component);
+
+  var _super = _createSuper(Game);
+
+  function Game(props) {
+    var _this;
+
+    _classCallCheck(this, Game);
+
+    _this = _super.call(this, props);
+    _this.board = new _minesweeper__WEBPACK_IMPORTED_MODULE_2__.Board(9, 30);
+    _this.state = {
+      board: _this.board
+    };
+    return _this;
+  }
+
+  _createClass(Game, [{
+    key: "render",
+    value: function render() {
+      return this.board.grid.map(function (row, i) {
+        row.map(function (col, j) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, " hello ");
+        });
+      });
+    }
+  }]);
+
+  return Game;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+
 
 /***/ }),
 
@@ -17,7 +83,6 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Tile": () => (/* binding */ Tile),
@@ -186,7 +251,6 @@ var Board = /*#__PURE__*/function () {
   \*********************************************/
 /***/ ((module) => {
 
-"use strict";
 /*
 object-assign
 (c) Sindre Sorhus
@@ -287,7 +351,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
   \*************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-"use strict";
 /** @license React v17.0.2
  * react-dom.development.js
  *
@@ -26555,7 +26618,6 @@ exports.version = ReactVersion;
   \*****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 function checkDCE() {
@@ -26599,7 +26661,6 @@ if (false) {} else {
   \*****************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-"use strict";
 /** @license React v17.0.2
  * react.development.js
  *
@@ -28943,7 +29004,6 @@ exports.version = ReactVersion;
   \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 if (false) {} else {
@@ -28959,7 +29019,6 @@ if (false) {} else {
   \*********************************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-"use strict";
 /** @license React v0.20.2
  * scheduler-tracing.development.js
  *
@@ -29317,7 +29376,6 @@ exports.unstable_wrap = unstable_wrap;
   \*************************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-"use strict";
 /** @license React v0.20.2
  * scheduler.development.js
  *
@@ -29974,7 +30032,6 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
   \*****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 if (false) {} else {
@@ -29990,7 +30047,6 @@ if (false) {} else {
   \*******************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 if (false) {} else {
@@ -30057,9 +30113,8 @@ if (false) {} else {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!*******************!*\
   !*** ./index.jsx ***!
   \*******************/
@@ -30080,7 +30135,7 @@ function Root() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var main = document.getElementById("root");
+  var main = document.getElementById("main");
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, null), main);
 });
 })();
