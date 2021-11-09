@@ -124,3 +124,4 @@ export class Board {
     return won;
   }
 }
+// console.log(new Board(9, 30))

@@ -71,6 +71,7 @@ var Board = /*#__PURE__*/function (_React$Component) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
             key: [i, j]
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            value: _this2.props.board.grid[i][j],
             updateGame: _this2.updateGame
           }));
         })));
@@ -215,14 +216,24 @@ var Tile = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Tile);
 
     _this = _super.call(this, props);
-    _this.state = {};
+    _this.explored = _this.props.value.explored;
+    _this.bombed = _this.props.value.bombed;
+    _this.flagged = _this.props.value.flagged;
     return _this;
   }
 
   _createClass(Tile, [{
+    key: "revealTile",
+    value: function revealTile() {
+      this.explored = true;
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "T");
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        classname: "tile-details",
+        onClick: this.revealTile
+      }, console.log(this.props.value));
     }
   }]);
 
@@ -397,7 +408,7 @@ var Board = /*#__PURE__*/function () {
   }]);
 
   return Board;
-}();
+}(); // console.log(new Board(9, 30))
 
 /***/ }),
 
@@ -30271,28 +30282,30 @@ if (false) {} else {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*******************!*\
-  !*** ./index.jsx ***!
-  \*******************/
+/*!*******************************!*\
+  !*** ./react_minesweeper.jsx ***!
+  \*******************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _components_game__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/game */ "./components/game.jsx");
-/* harmony import */ var _minesweeper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./minesweeper */ "./minesweeper.js");
+/* harmony import */ var _components_game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/game */ "./components/game.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _components_tile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/tile */ "./components/tile.jsx");
+/* harmony import */ var _minesweeper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./minesweeper */ "./minesweeper.js");
+
 
 
 
 
 
 function Root() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "root"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_game__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_components_game__WEBPACK_IMPORTED_MODULE_0__["default"], null));
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   var main = document.getElementById("main");
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, null), main);
+  react_dom__WEBPACK_IMPORTED_MODULE_2__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(Root, null), main);
 });
 })();
 

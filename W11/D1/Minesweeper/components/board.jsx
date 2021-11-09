@@ -18,7 +18,7 @@ export default class Board extends React.Component {
           <ul className="tile9">
              {row.map((ele, j) => {
                return <li key={[i,j]}>
-                <Tile  updateGame = {this.updateGame}/>
+                <Tile value = {this.props.board.grid[i][j]} updateGame = {this.updateGame}/>
                     </li>
             })
             } 
