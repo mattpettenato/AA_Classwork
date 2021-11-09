@@ -219,6 +219,12 @@ var Tile = /*#__PURE__*/function (_React$Component) {
     _this.explored = _this.props.value.explored;
     _this.bombed = _this.props.value.bombed;
     _this.flagged = _this.props.value.flagged;
+    _this.revealTile = _this.revealTile.bind(_assertThisInitialized(_this));
+    _this.state = {
+      explored: _this.explored,
+      bombed: _this.bombed,
+      flagged: _this.flagged
+    };
     return _this;
   }
 
@@ -230,10 +236,16 @@ var Tile = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var icon;
+
+      if (this.bombed) {
+        icon = '/U+1F4A3';
+      } else {}
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-        classname: "tile-details",
+        className: "tile-details",
         onClick: this.revealTile
-      }, console.log(this.props.value));
+      }, " ", "U+23FA", " ");
     }
   }]);
 
