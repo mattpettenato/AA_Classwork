@@ -4,7 +4,7 @@ import movesReducer from './moves_reducer'
 import itemsReducer from './items_reducer'
 
 const entitiesReducer = combineReducers({
-  pokemon: pokemonReducer,
+  pokemon: pokemonReducer
   // items: itemsReducer,
   // moves: movesReducer
 })
