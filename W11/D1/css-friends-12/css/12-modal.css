@@ -1,0 +1,61 @@
+/* PHASE 12: Modal */
+.modal {
+  display: none;
+}
+.modal.is-open {
+  display: inherit;
+}
+.modal-screen {
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modal-form {
+  position: absolute;
+  top:calc(50vh - 120px);
+  left:calc(50vw - 120px);
+  z-index: 2;
+  margin: 0 0 20px 0;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 240px;
+  width: 240px;
+  background-color: whitesmoke;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+.modal-form h1 {
+  font-size: 30px;
+  display: inline-flex;
+  justify-content: space-between;
+}
+.modal-form input {
+  border: 1px solid cornflowerblue;
+  border-radius: 3px;
+}
+.modal-form label {
+  font-weight: bold;
+  margin-top: 1em;
+}
+.modal-form button {
+  margin-top: 1em;
+  padding: .4em;
+  border-radius: .2em;
+  height: fit-content;
+  width: fit-content;
+  background-color:#0c0;
+  box-shadow: 0px 2px green;
+  font-weight: bold;
+  color: white;
+}
+
+.close-button {
+  font-weight: bold;
+  color: red;
+  font-size: 24;
+}

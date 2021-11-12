@@ -1,17 +1,26 @@
-.tile9 {
+.board {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-  width: 600px;
-
+  flex-flow: row wrap;
 }
 
-li {
-  margin: 20px;
+.board > div > div {background-color:cornsilk;}
+
+.tile {
+  border-style: outset;
+  width: 1em;
+  height: 1em;
 }
 
-ul {
-  margin: 0px;
-  list-style-type: none;
+.bombed.revealed {
+  border-style: inset;
+  background-color: crimson;
+}
+
+.flagged {
+  border-style: inset;
+  background-color: lightgreen;
+}
+
+.revealed {
+  border-style: inset;
 }

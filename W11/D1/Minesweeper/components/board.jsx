@@ -1,31 +1,33 @@
-import React from 'react';
-import Tile from './tile'
-import ReactDOM, { render } from 'react-dom';
-import * as Minesweeper from '../minesweeper';
+import React from "react"
+import Tile from "./tile";
+// import * as Minesweeper from "../minesweeper.js";
 
 export default class Board extends React.Component {
-  constructor(props){
+  // <Board board={this.state.board} updateGame={this.updateGame} />
+  // props has board and updategame function
+  constructor(props) {
     super(props);
-    // this.state =[]
-    this.updateGame = this.props.updateGame.bind(this);
+    this.state = {};
   }
 
-
   render() {
-    return this.props.board.grid.map((row, i) => {
-      return (
-        <div >
-          <ul className="tile9">
-             {row.map((ele, j) => {
-               return <li key={[i,j]}>
-                <Tile value = {this.props.board.grid[i][j]} updateGame = {this.updateGame}/>
-                    </li>
-            })
-            } 
-          </ul>
+    return (
+      <div>
+        <div>this is the board</div>
+        <div className="board">{
+          this.props.board.grid.map((row, i) => 
+            <div key={i}>
+              {row.map((el, j) => {
+                let t = this.props.board.grid[i][j];
+                return <Tile tile={t} key={j} updateGame={this.props.updateGame}/>
+              }
+              )}
+            </div>
+          )}
         </div>
-      );
-    })
+        {/* <p>{this.state.tiles.render()}</p> */}
+      </div>
+    )
   }
 }
 

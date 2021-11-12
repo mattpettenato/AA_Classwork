@@ -1,18 +1,17 @@
-import Game from './components/game';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Tile from './components/tile'
-import Minesweeper from './minesweeper'
-
-function Root() {
-  return (
-    <div className="root">
-      <Game />
-    </div>
-  )
-}
+import React from "react";
+import ReactDOM from "react-dom";
+import Game from "./components/game";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const main = document.getElementById("main");
-  ReactDOM.render(<Root />, main);
+  const root = document.getElementById("root");
+  ReactDOM.render(<Game/> , root);
 });
+
+// const Game = (props) => {
+//   return (
+//     <div>
+//       <p>Testing game</p>
+//       <Board />
+//     </div>
+//   )
+// }

@@ -3,7 +3,7 @@ export class Tile {
       this.board = board;
       this.pos = pos;
       this.bombed = false;
-      this.explored = false;
+      this.explored = false; // revealed
       this.flagged = false;
   }
 
@@ -124,4 +124,3 @@ export class Board {
     return won;
   }
 }
-// console.log(new Board(9, 30))
