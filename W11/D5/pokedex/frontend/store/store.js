@@ -9,3 +9,5 @@ const configureStore = () => (
     applyMiddleware(thunk, logger)
   )
 );
+
+export default configureStore
