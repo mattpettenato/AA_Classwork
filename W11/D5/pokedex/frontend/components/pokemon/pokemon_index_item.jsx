@@ -8,10 +8,14 @@ class PokemonIndexItem extends React.Component {
   render(){
     // console.log(this.props)
     return(
-      <li> 
-        {this.props.pokeman.name}
-        <img src={this.props.pokeman.image_url} width = "300px"/>
-      </li>
+      <tr>
+        <td> 
+          {this.props.pokeman.name}
+        </td>
+        <td>
+          <img src={this.props.pokeman.image_url} width="300px" />
+        </td>
+      </tr>
     )
   }
 }

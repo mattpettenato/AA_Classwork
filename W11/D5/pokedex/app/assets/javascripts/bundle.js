@@ -92,16 +92,16 @@ var PokemonIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.props);
+      // console.log(this.props)
       var pokemon = Object.values(this.props.pokemon);
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", {
         className: "pokemon-ul"
-      }, this.props.pokemon.map(function (pokeman) {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, this.props.pokemon.map(function (pokeman) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pokemon_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           pokeman: pokeman,
           key: Math.random()
         });
-      }));
+      })));
     }
   }]);
 
@@ -133,8 +133,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  console.log((0,_reducers_selectors__WEBPACK_IMPORTED_MODULE_1__.selectAllPokemon)(state)); // piece of state that container subscribes to
-
+  // console.log(selectAllPokemon(state))
+  // piece of state that container subscribes to
   return {
     pokemon: (0,_reducers_selectors__WEBPACK_IMPORTED_MODULE_1__.selectAllPokemon)(state),
     state: state
@@ -202,10 +202,10 @@ var PokemonIndexItem = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       // console.log(this.props)
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, this.props.pokeman.name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, this.props.pokeman.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
         src: this.props.pokeman.image_url,
         width: "300px"
-      }));
+      })));
     }
   }]);
 

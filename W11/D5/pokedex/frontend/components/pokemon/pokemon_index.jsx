@@ -12,18 +12,15 @@ class PokemonIndex extends React.Component{
   }
 
   render(){
-    console.log(this.props)
+    // console.log(this.props)
     const pokemon = Object.values(this.props.pokemon)
     return (
-      <ul className="pokemon-ul">
-        {/* {pokemon.map((pokeman) => (
-          <li key={pokeman.id}>
-            {pokeman.name}
-            <img src={pokeman.img_url}/>
-          </li>
-        ))} */}
+      <table className="pokemon-ul">
+        <tbody>
+
         {this.props.pokemon.map(pokeman => <PokemonIndexItem pokeman={pokeman} key={Math.random()}/>)}
-      </ul>
+        </tbody>
+      </table>
     )
   }
 }

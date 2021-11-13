@@ -4,7 +4,7 @@ import PokemonIndex from './pokemon_index';
 import { requestAllPokemon } from '../../actions/pokemon_actions';
 
 const mapStateToProps = state => {
-  console.log(selectAllPokemon(state))
+  // console.log(selectAllPokemon(state))
   // piece of state that container subscribes to
   return {pokemon: selectAllPokemon(state),
   state}

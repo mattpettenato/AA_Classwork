@@ -54,3 +54,20 @@ h3 {
   text-align: center;
   color: $black;
 }
+
+table {
+  justify-content: center;
+  display: block;
+  margin: 0 auto;
+  width: 529px;
+  border: 1px solid black;
+}
+
+td {
+  border: 3px solid black;
+  font-size: 32px;
+  vertical-align: middle;
+  text-align: center;
+  padding:10px;
+}
+
