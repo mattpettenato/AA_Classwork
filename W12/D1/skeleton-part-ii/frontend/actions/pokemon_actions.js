@@ -18,7 +18,7 @@ export const requestAllPokemon = () => (dispatch) => (
     .then(pokemon => dispatch(receiveAllPokemon(pokemon)))
 )
 
-export const requestOnePokemon = (pokemonId) => (dispatch) => (
-  APIUtil.fetchOnePokemon(pokemonId)
+export const requestOnePokemon = (payloadId) => (dispatch) => (
+  APIUtil.fetchOnePokemon(payloadId)
     .then(poke => dispatch(receiveOnePokemon(poke)))
 )

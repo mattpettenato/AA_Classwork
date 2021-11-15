@@ -1,6 +1,5 @@
 import { RECEIVE_ALL_POKEMON, RECEIVE_ONE_POKEMON } from './../actions/pokemon_actions';
 
-
 const pokemonReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state)

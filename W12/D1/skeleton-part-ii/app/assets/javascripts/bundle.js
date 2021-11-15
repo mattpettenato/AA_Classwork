@@ -124,9 +124,9 @@ var requestAllPokemon = function requestAllPokemon() {
     });
   };
 };
-var requestOnePokemon = function requestOnePokemon(pokemonId) {
+var requestOnePokemon = function requestOnePokemon(payloadId) {
   return function (dispatch) {
-    return _util_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchOnePokemon"](pokemonId).then(function (poke) {
+    return _util_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchOnePokemon"](payloadId).then(function (poke) {
       return dispatch(receiveOnePokemon(poke));
     });
   };
