@@ -13,6 +13,8 @@ export const receiveOnePokemon = (poke) => ({
   poke
 })
 
+//may need to refactor receiveOnePokemon so payload includes item Ids
+
 export const requestAllPokemon = () => (dispatch) => (
   APIUtil.fetchAllPokemon()
     .then(pokemon => dispatch(receiveAllPokemon(pokemon)))

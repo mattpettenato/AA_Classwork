@@ -5,10 +5,11 @@ const itemsReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state)
   switch (action.type){
     case RECEIVE_ONE_POKEMON:
-      return action.poke.items;
+      return action.poke.items
+      // nextState[action.poke.id] = action.poke.items
+      // return nextState
     default:
       return state;
-
   }
 }
 
